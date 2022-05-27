@@ -24,4 +24,3 @@ k.set('n', '<right>', '<nop>')
 -- Esc
 k.set('i', 'kj', '<esc>')
 k.set('c', 'kj', '<C-C>')
-

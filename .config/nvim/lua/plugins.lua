@@ -47,7 +47,7 @@ function M.setup()
       "kyazdani42/nvim-web-devicons",
       after = "github-nvim-theme",
       config = function()
-        require("nvim-web-devicons").setup{ default = true }
+        require("nvim-web-devicons").setup { default = true }
       end
     }
 
@@ -117,7 +117,14 @@ function M.setup()
     use {
       'lewis6991/gitsigns.nvim',
       config = function()
-        require('gitsigns').setup()
+        require('config.gitsigns').setup()
+      end
+    }
+
+    use {
+      "akinsho/toggleterm.nvim", tag = 'v1.*',
+      config = function()
+        require("config.toggleterm").setup()
       end
     }
 
