@@ -7,7 +7,7 @@ function M.setup()
   -- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
   require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     auto_reload_on_write = true,
-    disable_netrw = false,
+    disable_netrw = true,
     hijack_cursor = false,
     hijack_netrw = true,
     hijack_unnamed_buffer_when_opening = false,
@@ -20,7 +20,7 @@ function M.setup()
     view = {
       width = 30,
       height = 30,
-      hide_root_folder = false,
+      hide_root_folder = true,
       side = "left",
       preserve_window_proportions = false,
       number = false,
@@ -72,7 +72,7 @@ function M.setup()
       },
     },
     filters = {
-      dotfiles = false,
+      dotfiles = true,
       custom = {},
       exclude = {},
     },

@@ -45,7 +45,6 @@ function M.setup()
 
     use {
       "kyazdani42/nvim-web-devicons",
-      after = "github-nvim-theme",
       config = function()
         require("nvim-web-devicons").setup { default = true }
       end
@@ -139,6 +138,13 @@ function M.setup()
       "stevearc/dressing.nvim",
       config = function()
         require("config.ui.dressing").setup()
+      end
+    }
+
+    use {
+      "folke/which-key.nvim",
+      config = function()
+        require("config.util.whichkey").setup()
       end
     }
 
