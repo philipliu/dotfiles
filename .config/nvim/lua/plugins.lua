@@ -39,7 +39,7 @@ function M.setup()
     use {
       "projekt0n/github-nvim-theme",
       config = function()
-        require('config.theme').setup()
+        require('config.ui.theme').setup()
       end,
     }
 
@@ -57,7 +57,7 @@ function M.setup()
       "nvim-telescope/telescope.nvim",
       requires = { 'nvim-lua/plenary.nvim' },
       config = function()
-        require("config.telescope").setup()
+        require("config.ui.telescope").setup()
       end,
     }
 
@@ -65,7 +65,7 @@ function M.setup()
       'romgrk/barbar.nvim',
       requires = { 'kyazdani42/nvim-web-devicons' },
       config = function()
-        require("config.barbar").setup()
+        require("config.ui.barbar").setup()
       end
     }
 
@@ -73,7 +73,7 @@ function M.setup()
       "nvim-lualine/lualine.nvim",
       after = "github-nvim-theme",
       config = function()
-        require("config.lualine").setup()
+        require("config.ui.lualine").setup()
       end,
     }
 
@@ -81,22 +81,22 @@ function M.setup()
       "kyazdani42/nvim-tree.lua",
       requires = { "kyazdani42/nvim-web-devicons" },
       config = function()
-        require("config.nvimtree").setup()
+        require("config.ui.nvimtree").setup()
       end,
     }
 
     use {
       "neovim/nvim-lspconfig",
       config = function()
-        require("config.lsp").setup()
-        require("config.lsp").setup_rust()
+        require("config.lsp.lsp").setup()
+        require("config.lsp.lsp").setup_rust()
       end,
     }
 
     use {
       "hrsh7th/nvim-cmp",
       config = function()
-        require("config.cmp").setup()
+        require("config.lsp.cmp").setup()
       end,
     }
     use { "hrsh7th/cmp-nvim-lsp" }
@@ -110,21 +110,35 @@ function M.setup()
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate',
       config = function()
-        require("config.treesitter").setup()
+        require("config.util.treesitter").setup()
       end
     }
 
     use {
       'lewis6991/gitsigns.nvim',
       config = function()
-        require('config.gitsigns').setup()
+        require('config.ui.gitsigns').setup()
       end
     }
 
     use {
       "akinsho/toggleterm.nvim", tag = 'v1.*',
       config = function()
-        require("config.toggleterm").setup()
+        require("config.util.toggleterm").setup()
+      end
+    }
+
+    use {
+      "mrjones2014/legendary.nvim",
+      config = function()
+        require("config.util.legendary").setup()
+      end
+    }
+
+    use {
+      "stevearc/dressing.nvim",
+      config = function()
+        require("config.ui.dressing").setup()
       end
     }
 

@@ -2,10 +2,6 @@ local api = vim.api
 local g = vim.g
 local opt = vim.opt
 
--- Remap leader and local leader to <Space>
-g.mapleader = " "
-g.maplocalleader = " "
-
 opt.syntax = "on"
 opt.number = true
 opt.enc = "utf-8"
