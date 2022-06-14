@@ -2,6 +2,8 @@ local M = {}
 
 function M.setup()
   local cmp = require 'cmp'
+  local lspkind = require 'lspkind'
+
   cmp.setup({
     -- Enable LSP snippets
     snippet = {
@@ -31,6 +33,10 @@ function M.setup()
       { name = 'vsnip' },
       { name = 'path' },
       { name = 'buffer' },
+    },
+
+    formatting = {
+      format = lspkind.cmp_format(),
     },
   })
 end

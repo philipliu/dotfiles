@@ -1,7 +1,9 @@
 local M = {}
 
 function M.setup()
-  require('legendary').setup({
+  local legendary = require('legendary')
+
+  legendary.setup({
     -- Include builtins by default, set to false to disable
     include_builtin = true,
     -- Include the commands that legendary.nvim creates itself
@@ -60,6 +62,7 @@ function M.setup()
       display_results = 'float',
     },
   })
+
 end
 
 return M

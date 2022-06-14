@@ -1,5 +1,3 @@
-local api = vim.api
-local g = vim.g
 local opt = vim.opt
 
 opt.syntax = "on"
@@ -17,5 +15,14 @@ opt.hlsearch = true
 opt.termguicolors = true
 opt.mouse = "a"
 opt.signcolumn = "yes"
-
-vim.cmd "set noshowmode"
+opt.fillchars = {
+	vert = " ", -- alternatives │
+	fold = " ",
+	eob = " ", -- suppress ~ at EndOfBuffer
+	diff = "╱", -- alternatives = ⣿ ░ ─
+	msgsep = "‾",
+	foldopen = "▾",
+	foldsep = "│",
+	foldclose = "▸",
+}
+opt.showmode = false

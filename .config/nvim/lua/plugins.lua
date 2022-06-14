@@ -92,8 +92,11 @@ function M.setup()
       end,
     }
 
+    use { "onsails/lspkind.nvim" }
+
     use {
       "hrsh7th/nvim-cmp",
+      requires = { "onsails/lspkind.nvim" },
       config = function()
         require("config.lsp.cmp").setup()
       end,
@@ -104,6 +107,14 @@ function M.setup()
     use { "hrsh7th/cmp-buffer" }
     use { "hrsh7th/vim-vsnip" }
     use { "simrat39/rust-tools.nvim" }
+
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      config = function()
+        require("config.lsp.trouble").setup()
+      end
+    }
 
     use {
       'nvim-treesitter/nvim-treesitter',
@@ -145,6 +156,27 @@ function M.setup()
       "folke/which-key.nvim",
       config = function()
         require("config.util.whichkey").setup()
+      end
+    }
+
+    use {
+      "lukas-reineke/indent-blankline.nvim",
+      config = function()
+        require("config.ui.indent_blankline").setup()
+      end
+    }
+
+    use {
+      "windwp/nvim-autopairs",
+      config = function()
+        require("config.util.autopairs").setup()
+      end
+    }
+
+    use {
+      "terrortylor/nvim-comment",
+      config = function()
+        require("config.util.comment").setup()
       end
     }
 

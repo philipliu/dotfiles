@@ -18,7 +18,7 @@ function M.setup()
     sort_by = "name",
     update_cwd = false,
     view = {
-      width = 30,
+      width = 45,
       height = 30,
       hide_root_folder = true,
       side = "left",

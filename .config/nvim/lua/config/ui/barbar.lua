@@ -73,7 +73,7 @@ function M.setup()
   local bufferline_state = require('bufferline.state')
 
   nvim_tree_events.on_tree_open(function()
-    bufferline_state.set_offset(31, "File Tree")
+    bufferline_state.set_offset(46)
   end)
 
   nvim_tree_events.on_tree_close(function()

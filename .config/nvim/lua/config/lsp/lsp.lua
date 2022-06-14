@@ -18,7 +18,7 @@ function M.setup()
 
     -- Use a loop to conveniently call 'setup' on multiple servers and
     -- map buffer local keybindings when the language server attaches
-    local servers = { 'rust_analyzer' }
+    local servers = { 'rust_analyzer', 'tsserver' }
     for _, lsp in pairs(servers) do
         require('lspconfig')[lsp].setup {
             on_attach = on_attach,
@@ -27,6 +27,13 @@ function M.setup()
                 debounce_text_changes = 150,
             }
         }
+    end
+
+    -- setup icons in gutter
+    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+    for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
     end
 
     -- format on save
